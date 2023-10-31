@@ -28,7 +28,7 @@ const createBook = async (req, res) => {
 const getAllBooks = async (req, res) => {
     try{
         const books = await Book.find({});
-        console.log(books);
+        //console.log(books);
         return res.status(200).json({
          count: books.length,
          data: books
@@ -44,7 +44,7 @@ const getBookById = async (req, res) => {
     try{
         const{id} = req.params;
         const book = await Book.findById(id);
-        console.log(book);
+        //console.log(book);
         return res.status(200).json(book);
     }catch(err){
         console.log(err);
@@ -81,7 +81,7 @@ const deleteBook = async (req, res) => {
         if(!dBook){
           return res.status(404).json({message: 'Book not found'});
         }
-        console.log(dBook);
+        //console.log(dBook);
         return res.status(200).send({message: 'Book deleted successfully!!'});
       }catch(err){
         console.log(err.message);
