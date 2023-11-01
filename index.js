@@ -41,6 +41,8 @@ mongoose
     console.log("Server conneted to mongoDB");
   })
   .catch((err) => {
+    console.log('Error connecting to DB');
+    console.log(err);
   });
 
 /*
